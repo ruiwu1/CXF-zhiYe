@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.CXF.mapper.GetStaffMapper">
+
+  <resultMap id="UserMap" type="com.commen.pojo.User">
+      <result column="employeNo" jdbcType="VARCHAR" property="employeNo" />
+      <result column="UserName" jdbcType="VARCHAR" property="userName" />
+      <result column="staffName" jdbcType="VARCHAR" property="staffName" />
+  </resultMap>
+
+
+    <resultMap id="DeptMap" type="com.commen.pojo.Dept">
+        <result column="WorkingDepartment" jdbcType="VARCHAR" property="name" />
+    </resultMap>
+
+    <resultMap id="ApplyStatusMap" type="com.commen.pojo.zhiye.ApplyStatus">
+        <result column="PatientID" jdbcType="VARCHAR" property="patientId" />
+        <result column="PatientNumber" jdbcType="VARCHAR" property="visitNo" />
+        <result column="visitType" jdbcType="VARCHAR" property="visitType" />
+        <result column="FilmerName" jdbcType="VARCHAR" property="operator" />
+        <result column="ExamDate" jdbcType="VARCHAR" property="operatorTime" />
+        <result column="patientName" jdbcType="VARCHAR" property="patientName" />
+    </resultMap>
+
+    <select id="getUserByStaff" parameterType="com.commen.pojo.User" resultMap="UserMap">
+        SELECT UserID AS employeNo,UserName ,UserName AS staffName FROM OurUsersList WHERE 1=1
+        <!--<if test="userName != null and userName !=''">
+            AND
+        </if>-->
+        <if test="employeNo != null and employeNo !=''">
+            AND UserID = #{employeNo}
+        </if>
+    </select>
+
+<!--    <select id="getStaffSystem" parameterType="com.commen.pojo.StaffSystem" resultMap="LoginSystemMap">
+        SELECT UserID AS employeNo,UserName ,UserName AS staffName FROM OurUsersList WHERE 1=1
+        &lt;!&ndash;<if test="userName != null and userName !=''">
+            AND
+        </if>&ndash;&gt;
+        <if test="employeNo != null and employeNo !=''">
+            AND UserID = #{employeNo}
+        </if>
+    </select>-->
+
+    <select id="getStaffDept" parameterType="com.commen.pojo.StaffDept" resultMap="DeptMap">
+        SELECT WorkingDepartment FROM OurUsersList WHERE 1 = 1
+        <if test="staffKey != null and staffKey !=''">
+            AND UserID = #{staffKey}
+        </if>
+    </select>
+    <!--
+     -->
+    <select id="getExamApplyStatus" parameterType="java.lang.String"  resultType="com.commen.pojo.zhiye.ApplyStatus">
+        SELECT
+            exd.ExamModality + exd.ExamNumber AS PatientID,
+            ptd.PatientNumber visitNo,
+            CASE
+            WHEN cid.IsOutpatient = '1' THEN
+                '门急诊'
+            WHEN cid.IsInpatient = '1' THEN
+                '住院'
+            WHEN cid.IsPePatient = '1' THEN
+                '体检'
+            WHEN exd.IsEmergency = '1' THEN
+                '门急诊'
+            END AS 'visitType',
+            rpd.SuperDocName+'/'+our.HisUserName as operator,
+            exd.ExamDate operatorTime,
+            ptd.patientName patientName,
+            hs.UIDOfHis applyNo,
+            exd.ExamStatus
+        FROM
+            ExamData exd
+            LEFT JOIN HISData hs ON exd.ExamUID = hs.ExamUID
+            LEFT JOIN PatientData ptd ON exd.PatientDataUID = ptd.PatientDataUID
+            LEFT JOIN ClinicalData cid ON exd.ClinicalDataUID = cid.ClinicalDataUID
+            left JOIN ReportData rpd on rpd.ReportDataUID = exd.ReportDataUID
+            left JOIN OurUserslist our on rpd.SuperDocName = our.UserName
+
+        WHERE exd.ExamUID = #{ExamUID}
+    </select>
+
+    <select id="getPacsReport" parameterType="com.commen.pojo.zhiye.PacsReport" resultType="com.commen.pojo.zhiye.PacsReport">
+        SELECT distinct hs.PatientID patientId,ptd.PatientNumber visitNo,
+            CASE
+               WHEN cid.IsOutpatient = '1' THEN '1'
+               WHEN cid.IsInpatient = '1' THEN '2'
+               WHEN cid.IsPePatient = '1' THEN '3'
+               END
+            AS 'visitType',
+            exd.IsEmergency emergencyFlag,ptd.patientName patientName,ptd.PatientSex patientSex,ptd.PatientDOB patientBirthDay,
+            cid.patientAge,cid.BedNo bedNo,cid.BriefHistory medicalHistory,
+            exd.ReferPhysician applyOperator,exd.UseUnitCode applyDeptCode,exd.ReferDepartment applyDeptName,
+            rl.RequestTime applyTime,rd.ReportDataUID reportNo,md.ReportTitle reportTitle,
+            ei.ExamItemCode itemCode,ei.ExamName itemName,em.ExamMethod examMethod,
+            ei.ExamBodyPart examPart,ei.ExamName examPartDesc,rd.ExamImpression visitStateDesc,
+            rd.ExamFindings examImgDesc,epd.EquipmentTitle examDevice,
+            epd.EquipmentTitle examDeviceName,exd.RegistryTime registerTime,exd.RegisterName registerOperator,
+            exd.ExamDate examTime,sd.ExamDepartment examDept,
+            (SELECT our.UserName FROM OurUsersList our
+            WHERE our.IsTechnician = 0) AS examOperator,
+            rd.WriteReportTime reportTime,
+            (SELECT our.UserName FROM OurUsersList our
+            WHERE our.IsReporter = 0) AS reportOperator,
+            exd.BookingTime auditTime,
+            (SELECT our.UserName FROM OurUsersList our
+            WHERE our.IsSuperer = 0) AS auditOperator,
+            ptl.ReportPrintDate printTime,ptl.PrinterName printOperator
+        FROM ExamData exd
+            LEFT JOIN HISData hs ON exd.ExamUID=hs.ExamUID
+            LEFT JOIN PatientData ptd ON exd.PatientDataUID=ptd.PatientDataUID
+            LEFT JOIN ClinicalData cid ON exd.ClinicalDataUID=cid.ClinicalDataUID
+            LEFT JOIN ReportData rd ON exd.ReportDataUID=rd.ReportDataUID
+            LEFT JOIN Modality md ON exd.ExamModality = md.ExamModality
+            LEFT JOIN ExamItem ei ON exd.ExamItemUID=ei.ExamItemUID
+            LEFT JOIN ExamMethod em ON exd.ExamItemUID=em.ExamItemUID
+            LEFT JOIN EquipmentData epd ON exd.EquipmentUID=epd.EquipmentUID
+            LEFT JOIN PrintTimeList ptl ON exd.ExamUID=ptl.ExamDataUID
+            LEFT JOIN ExamApplyForm eaf ON exd.ExamUID = eaf.ExamUID
+            LEFT JOIN ReadingList rl ON exd.ExamUID = rl.ExamUID
+            LEFT JOIN SeriesData sd ON exd.ExamUID = sd.ExamUID
+        WHERE 1=1
+        <if test="patientId != null and patientId !=''">
+            AND exd.PatientDataUID = #{patientId}
+        </if>
+    </select>
+    <select id="getApplyNos" parameterType="com.commen.pojo.zhiye.PacsReport"  resultType="java.lang.String">
+      SELECT DISTINCT eaf.ApplyFormUID FROM ExamData exd
+      LEFT JOIN ExamApplyForm eaf ON exd.ExamUID = eaf.ExamUID
+        <if test="patientId != null and patientId !=''">
+            AND exd.PatientDataUID = #{patientId}
+        </if>
+    </select>
+
+</mapper>

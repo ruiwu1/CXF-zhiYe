@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.CXF.mapper.MutualCheckRuleMapper">
+
+
+    <resultMap id="ImageMap" type="com.CXF.model.ImageForMore">
+        <result column="InstanceUID" jdbcType="VARCHAR" property="InstanceUID" /><!--图像代码-->
+        <result column="SeriesUID" jdbcType="VARCHAR" property="SeriesUID" /><!--图像序号-->
+        <result column="ExamUID" jdbcType="VARCHAR" property="ExamUID" /><!--图像类型(1普通图像2dicom)-->
+        <result column="FilePath" jdbcType="VARCHAR" property="FilePath" />
+        <result column="FileName" jdbcType="VARCHAR" property="FileName" />
+        <result column="StudyUID" jdbcType="VARCHAR" property="StudyUID" />
+        <result column="ImageServerIP" jdbcType="VARCHAR" property="ImageServerIP" />
+        <result column="InternalType" jdbcType="VARCHAR" property="InternalType" />
+        <result column="ImageMainNo" jdbcType="VARCHAR" property="ImageMainNo" />
+    </resultMap>
+
+    <select id="getExamApplyStatus" parameterType="com.CXF.model.ExamData" resultType="com.CXF.model.ApplyStatusForMore">
+        SELECT
+            exd.ExamModality + exd.ExamNumber AS PatientID,
+            ptd.PatientNumber visitNo,
+            CASE
+
+            WHEN cid.IsOutpatient = '1' THEN
+                '1'
+            WHEN cid.IsInpatient = '1' THEN
+                '2'
+            WHEN cid.IsPePatient = '1' THEN
+                '3'
+            WHEN exd.IsEmergency = '1' THEN
+                '1'
+            END AS 'visitType',
+        <choose>
+            <when test='examStatus == "3"'>
+                exd.RegisterName + '/'+ our.HisUserName  AS operator,
+            </when>
+            <when test='examStatus == "5"'>
+                exd.TechnicianName + '/'+our.HisUserName  AS operator,
+            </when>
+            <when test='examStatus == "6"'>
+                rd.DiagnoserName + '/'+ our.HisUserName  AS operator,
+            </when>
+            <when test='examStatus == "7"'>
+                rd.SuperDocName + '/'+ our.HisUserName  AS operator,
+            </when>
+            <otherwise>
+            </otherwise>
+        </choose>
+            exd.ExamDate operatorTime,
+            ptd.patientName patientName,
+            exd.ExamStatus,
+            CASE
+            WHEN mly.ExamDepartment = '影像中心' THEN
+                '1'
+            WHEN mly.ExamDepartment = '超声科' THEN
+                '2'
+            END AS 'subjectClass'
+        FROM
+          ExamData_copy1 exd
+            LEFT JOIN PatientData ptd ON exd.PatientDataUID = ptd.PatientDataUID
+            LEFT JOIN ClinicalData cid ON exd.ClinicalDataUID = cid.ClinicalDataUID
+
+            <choose>
+                <when test='examStatus == "3"'>
+                    LEFT JOIN OurUserslist our ON exd.RegisterID = our.UserID
+                </when>
+                <when test='examStatus == "5"'>
+                    LEFT JOIN OurUserslist our ON exd.TechnicianID = our.UserID
+                </when>
+                <when test='examStatus == "6"'>
+                    LEFT JOIN ReportData rd ON exd.ReportDataUID=rd.ReportDataUID
+                    LEFT JOIN OurUserslist our ON rd.DiagnoserName = our.UserName
+                </when>
+                <when test='examStatus == "7"'>
+                    LEFT JOIN ReportData rd ON exd.ReportDataUID=rd.ReportDataUID
+                    LEFT JOIN OurUserslist our ON rd.SuperDocName = our.UserName
+                </when>
+                <otherwise>
+                </otherwise>
+            </choose>
+            LEFT JOIN Modality mly ON mly.ExamModality = exd.ExamModality
+        WHERE exd.ExamUID = #{examUID}
+    </select>
+
+    <select id="getApplyNo" resultType="java.lang.String">
+        SELECT hs.UIDOfHis FROM
+            ExamData exd
+            LEFT JOIN HISData hs ON exd.ExamUID = hs.ExamUID
+        where exd.ExamUID=#{examUID}
+    </select>
+
+    <select id="selectPacsReportByExamUID" resultType="com.commen.pojo.zhiye.PacsReport">
+        SELECT
+            exd.ExamModality + exd.ExamNumber AS PatientID,
+            ptd.PatientNumber visitNo,
+            CASE
+            WHEN cid.IsOutpatient = '1' THEN
+                '1'
+            WHEN cid.IsInpatient = '1' THEN
+                '2'
+            WHEN cid.IsPePatient = '1' THEN
+                '3'
+            WHEN exd.IsEmergency = '1' THEN
+                '1'
+            END AS 'visitType',
+            exd.IsEmergency emergencyFlag,
+            ptd.patientName patientName,
+            ptd.PatientSex patientSex,
+            ptd.PatientDOB patientBirthDay,
+            cid.patientAge,
+            cid.BedNo bedNo,
+            cid.BriefHistory medicalHistory,
+            hs.UIDOfHis applyNo,
+           /* --申请*/
+            exd.ReferPhysician applyOperator,
+            exd.UseUnitCode applyDeptCode,
+            exd.ReferPhysician applyDeptName,
+            exd.RegistryTime AS applyTime,
+            /*--报告*/
+            rd.ReportDataUID reportNo,
+            md.ReportTitle reportTitle,
+            /*--检查*/
+            CASE
+            WHEN mly.ExamDepartment = '影像中心' THEN
+                '020202'
+            WHEN mly.ExamDepartment = '超声科' THEN
+                '020201'
+            END AS 'subjectClass',
+            ei.ExamItemCode itemCode,
+            ei.ExamName itemName,
+            ei.ExamName examMethod,
+            ei.ExamBodyPart examPart,
+            ei.ExamName examPartDesc,
+            rd.ExamImpression visitStateDesc,
+            rd.ExamFindings examImgDesc,
+            epd.EquipmentTitle examDevice,
+            epd.EquipmentTitle examDeviceName,
+            exd.RegistryTime registerTime,
+            exd.RegisterName + '/' + our.HisUserName AS registerOperator,
+            exd.ExamDate examTime,
+            '影像中心' examDept,
+            /*--检查人（姓名/工牌）*/
+            exd.TechnicianName  + '/' + our1.HisUserName AS examOperator,
+            /*--报告时间*/
+            rd.WriteReportTime reportTime,
+            /*--报告人（姓名/工牌）*/
+            rd.DiagnoserName  + '/' + our2.HisUserName AS reportOperator,
+            /*--审核时间*/
+            rd.CheckReportTime AS auditTime,
+            /*--审核人（姓名/工牌）*/
+            rd.SuperDocName  + '/' + our3.HisUserName AS auditOperator,
+            /*--打印时间*/
+            rd.CheckReportTime AS printTime,
+            /*--打印人员（姓名/工牌）*/
+            rd.SuperDocName  + '/' + our4.HisUserName AS printOperator
+        FROM
+            ReportData rd
+            LEFT JOIN ExamData exd ON exd.ReportDataUID = rd.ReportDataUID
+            LEFT JOIN HISData hs ON exd.ExamUID = hs.ExamUID
+            LEFT JOIN PatientData ptd ON exd.PatientDataUID = ptd.PatientDataUID
+            LEFT JOIN ClinicalData cid ON exd.ClinicalDataUID = cid.ClinicalDataUID
+            LEFT JOIN Modality md ON exd.ExamModality = md.ExamModality
+            LEFT JOIN ExamItem ei ON exd.ExamItemUID = ei.ExamItemUID
+            LEFT JOIN EquipmentData epd ON exd.EquipmentUID = epd.EquipmentUID
+            LEFT JOIN Modality mly ON mly.ExamModality = exd.ExamModality
+            LEFT JOIN OurUserslist our ON exd.RegisterID = our.UserID
+            LEFT JOIN OurUserslist our1 ON exd.TechnicianName = our1.UserName
+            LEFT JOIN OurUserslist our2 ON rd.DiagnoserName = our2.UserName
+            LEFT JOIN OurUserslist our3 ON rd.SuperDocName = our3.UserName
+            LEFT JOIN OurUserslist our4 ON rd.SuperDocName = our4.UserName
+        WHERE
+            1 = 1 AND  exd.ExamUID = #{examUID}
+    </select>
+
+    <select id="selectPacsImageByExamUID" resultMap="ImageMap">
+        SELECT
+            igd.InstanceUID,igd.ImageSubNo,igd.SeriesUID,exd.ExamUID,igd.FilePath,
+            igd.FileName,igd.StudyUID,igd.ImageServerIP,igd.InternalType,igd.ImageMainNo
+        FROM
+            ReportData rd
+            LEFT JOIN ExamData exd ON rd.ReportDataUID = exd.ReportDataUID
+            LEFT JOIN ImageData igd on igd.ExamUID = exd.ExamUID
+        where exd.ExamUID = #{examUID}
+    </select>
+</mapper>

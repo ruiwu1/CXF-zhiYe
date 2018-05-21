@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--引入数据库配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties" ignore-unresolvable="true"/>
+
+
+
+    <context:component-scan base-package="com.CXF.mapper;" />
+
+
+    <!--druid连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        <!-- 数据库驱动 -->
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <!-- 初始化大小、最小、最大连接数 -->
+        <property name="initialSize" value="3" />
+        <property name="minIdle" value="3" />
+        <property name="maxActive" value="20" />
+        <!-- 连接等待超时时间，单位是毫秒 -->
+        <property name="maxWait" value="60000" />
+        <!-- 配置检测间隔，检测需要关闭的空闲连接 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <!-- 一个连接在池中的最小生存时间 -->
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="validationQuery" value="SELECT 'x'" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+        <!-- 打开PSCache，指定每个连接PSCache的大小 -->
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+        <!-- 配置监控统计拦截的filters，关闭后监控界面sql无法统计 -->
+        <property name="filters" value="stat" />
+    </bean>
+
+  <!--  <bean id="postgreSqlDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        &lt;!&ndash; 数据库驱动 &ndash;&gt;
+        <property name="driverClassName" value="${postgresql.jdbc.driverClassName}" />
+        <property name="url" value="${postgresql.jdbc.url}" />
+        <property name="username" value="${postgresql.jdbc.username}" />
+        <property name="password" value="${postgresql.jdbc.password}" />
+        &lt;!&ndash; 初始化大小、最小、最大连接数 &ndash;&gt;
+        <property name="initialSize" value="3" />
+        <property name="minIdle" value="3" />
+        <property name="maxActive" value="20" />
+        &lt;!&ndash; 连接等待超时时间，单位是毫秒 &ndash;&gt;
+        <property name="maxWait" value="60000" />
+        &lt;!&ndash; 配置检测间隔，检测需要关闭的空闲连接 &ndash;&gt;
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        &lt;!&ndash; 一个连接在池中的最小生存时间 &ndash;&gt;
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="validationQuery" value="SELECT 'x'" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+        &lt;!&ndash; 打开PSCache，指定每个连接PSCache的大小 &ndash;&gt;
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+        &lt;!&ndash; 配置监控统计拦截的filters，关闭后监控界面sql无法统计 &ndash;&gt;
+        <property name="filters" value="stat" />
+    </bean>-->
+
+    <!--统一的dataSource-->
+ <!--   <bean id="dynamicDataSource" class="com.commen.utils.database.DynamicDataSource" >
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                &lt;!&ndash;通过不同的key决定用哪个dataSource&ndash;&gt;
+                <entry key="sqlServerDataSource" value-ref="dataSource"></entry>
+                <entry key="postgreSqlDataSource" value-ref="postgreSqlDataSource" ></entry>
+            </map>
+        </property>
+        &lt;!&ndash;设置默认的dataSource&ndash;&gt;
+        <property name="defaultTargetDataSource" ref="dataSource"></property>
+    </bean>-->
+
+
+
+    <!--spring和mybatis整合-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--mybatis配置文件-->
+        <property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml"/>
+        <!--mapping路径-->
+        <property name="mapperLocations" value="classpath:mapping/*.xml"></property>
+        <property name="plugins">
+            <array>
+                <!--分页插件-->
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+                            helperDialect=mysql
+                            reasonable=true
+                            supportMethodsArguments=true
+                            params=count=countSql
+                            autoRuntimeDialect=true
+                            pageSizeZero=true
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+    <!-- mapper扫描器 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.CXF.mapper"></property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+
+
+    <!-- spring 线程池的配置 -->
+    <bean id ="taskExecutor"  class ="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor" >
+        <!-- 线程池维护线程的最少数量 -->
+        <property name ="corePoolSize" value ="5" />
+        <!-- 线程池维护线程所允许的空闲时间 -->
+        <property name ="keepAliveSeconds" value ="30000" />
+        <!-- 线程池维护线程的最大数量 -->
+        <property name ="maxPoolSize" value ="1000" />
+        <!-- 线程池所使用的缓冲队列 -->
+        <property name ="queueCapacity" value ="200" />
+    </bean>
+
+    <!-- 配置线程池 -->
+    <bean id ="dataImportTaskExecutor"  parent="taskExecutor" >
+        <!-- 线程池维护线程的最少数量 -->
+        <property name ="corePoolSize" value ="1" />
+        <!-- 线程池维护线程的最大数量 -->
+        <property name ="maxPoolSize" value ="1" />
+    </bean>
+
+</beans>

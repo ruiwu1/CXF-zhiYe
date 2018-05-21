@@ -1,0 +1,820 @@
+[INFO][main][2017-12-04 10:10:51][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.GetStaffDept, com.cxf.webservice.GetStaffDeptResponse, com.cxf.webservice.GetStaffSystem, com.cxf.webservice.GetStaffSystemResponse, com.cxf.webservice.GetUserByStaff, com.cxf.webservice.GetUserByStaffResponse, com.cxf.webservice.ObjectFactory
+  [ERROR][main][2017-12-04 10:10:52][com.commen.utils.CxfInvokeUtil] - cxf 调用webservice 执行错误：
+  org.apache.cxf.common.i18n.UncheckedException: No operation was found with the name {http://impl.webservice.CXF.com/}GetUserByStaff.
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:289)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:283)
+	at com.commen.utils.CxfInvokeUtil.invoke(CxfInvokeUtil.java:40)
+	at com.CXF.webservice.test.test.main(test.java:14)
+[INFO][main][2017-12-04 10:12:08][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.GetStaffDept, com.cxf.webservice.GetStaffDeptResponse, com.cxf.webservice.GetStaffSystem, com.cxf.webservice.GetStaffSystemResponse, com.cxf.webservice.GetUserByStaff, com.cxf.webservice.GetUserByStaffResponse, com.cxf.webservice.ObjectFactory
+  [ERROR][main][2017-12-04 10:12:09][com.commen.utils.CxfInvokeUtil] - cxf 调用webservice 执行错误：
+  org.apache.cxf.common.i18n.UncheckedException: No operation was found with the name {http://impl.webservice.CXF.com/}GetUserByStaff.
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:289)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:283)
+	at com.commen.utils.CxfInvokeUtil.invoke(CxfInvokeUtil.java:40)
+	at com.CXF.webservice.test.test.main(test.java:14)
+[INFO][main][2017-12-04 16:59:47][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 16:59:49][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://192.168.24.138:456/helloWord
+  [INFO][main][2017-12-04 16:59:49][org.eclipse.jetty.util.log.Log] - Logging initialized @2986ms
+  [INFO][main][2017-12-04 16:59:49][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 16:59:49][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@7d61eb55
+  [WARN][main][2017-12-04 16:59:49][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@3e62d773{HTTP/1.1}{192.168.24.138:456}: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:15)
+[WARN][main][2017-12-04 16:59:49][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@776a6d9b: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:15)
+[ERROR][main][2017-12-04 16:59:49][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 456: Cannot assign requested address: bind
+  [INFO][main][2017-12-04 16:59:49][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@3e62d773{HTTP/1.1}{192.168.24.138:456}
+  [INFO][main][2017-12-04 17:00:06][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:00:07][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://192.168.24.138:9999/helloWord
+  [INFO][main][2017-12-04 17:00:07][org.eclipse.jetty.util.log.Log] - Logging initialized @1228ms
+  [INFO][main][2017-12-04 17:00:07][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:00:07][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@7d61eb55
+  [WARN][main][2017-12-04 17:00:07][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@3e62d773{HTTP/1.1}{192.168.24.138:9999}: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:15)
+[WARN][main][2017-12-04 17:00:07][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@776a6d9b: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:15)
+[ERROR][main][2017-12-04 17:00:07][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 9,999: Cannot assign requested address: bind
+  [INFO][main][2017-12-04 17:00:07][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@3e62d773{HTTP/1.1}{192.168.24.138:9999}
+  [INFO][main][2017-12-04 17:00:32][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:00:33][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://192.168.24.138:9999/helloWord
+  [INFO][main][2017-12-04 17:00:33][org.eclipse.jetty.util.log.Log] - Logging initialized @1316ms
+  [INFO][main][2017-12-04 17:00:33][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:00:33][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@7d61eb55
+  [WARN][main][2017-12-04 17:00:33][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@3e62d773{HTTP/1.1}{192.168.24.138:9999}: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:15)
+[WARN][main][2017-12-04 17:00:33][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@776a6d9b: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:15)
+[ERROR][main][2017-12-04 17:00:33][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 9,999: Cannot assign requested address: bind
+  [INFO][main][2017-12-04 17:00:33][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@3e62d773{HTTP/1.1}{192.168.24.138:9999}
+  [INFO][main][2017-12-04 17:01:15][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:01:16][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:9999/helloWord
+  [INFO][main][2017-12-04 17:01:16][org.eclipse.jetty.util.log.Log] - Logging initialized @1197ms
+  [INFO][main][2017-12-04 17:01:16][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:01:16][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@7d61eb55
+  [INFO][main][2017-12-04 17:01:16][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@42b3b079{HTTP/1.1}{127.0.0.1:9999}
+  [INFO][main][2017-12-04 17:01:16][org.eclipse.jetty.server.Server] - Started @1599ms
+  [WARN][main][2017-12-04 17:01:16][org.eclipse.jetty.server.handler.ContextHandler] - Empty contextPath
+  [INFO][main][2017-12-04 17:01:16][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@11d8ae8b{/,null,AVAILABLE}
+  [INFO][main][2017-12-04 17:01:49][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:01:49][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:9999/helloWord
+  [INFO][main][2017-12-04 17:01:49][org.eclipse.jetty.util.log.Log] - Logging initialized @1312ms
+  [INFO][main][2017-12-04 17:01:49][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:01:49][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@7d61eb55
+  [INFO][main][2017-12-04 17:01:50][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@42b3b079{HTTP/1.1}{127.0.0.1:9999}
+  [INFO][main][2017-12-04 17:01:50][org.eclipse.jetty.server.Server] - Started @1490ms
+  [WARN][main][2017-12-04 17:01:50][org.eclipse.jetty.server.handler.ContextHandler] - Empty contextPath
+  [INFO][main][2017-12-04 17:01:50][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@11d8ae8b{/,null,AVAILABLE}
+  [INFO][main][2017-12-04 17:12:22][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.HelloWord, com.cxf.webservice.test.HelloWordResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-04 17:16:39][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:16:39][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:9999/helloWord
+  [INFO][main][2017-12-04 17:16:39][org.eclipse.jetty.util.log.Log] - Logging initialized @1410ms
+  [INFO][main][2017-12-04 17:16:39][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:16:39][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-04 17:16:40][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:9999}
+  [INFO][main][2017-12-04 17:16:40][org.eclipse.jetty.server.Server] - Started @1584ms
+  [WARN][main][2017-12-04 17:16:40][org.eclipse.jetty.server.handler.ContextHandler] - Empty contextPath
+  [INFO][main][2017-12-04 17:16:40][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/,null,AVAILABLE}
+  [INFO][main][2017-12-04 17:16:54][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.HelloWord, com.cxf.webservice.test.HelloWordResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-04 17:26:28][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:26:29][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://192.168.2.236:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-04 17:26:29][org.eclipse.jetty.util.log.Log] - Logging initialized @1236ms
+  [INFO][main][2017-12-04 17:26:29][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:26:29][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [WARN][main][2017-12-04 17:26:29][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:80}: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[WARN][main][2017-12-04 17:26:29][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@1f760b47: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[ERROR][main][2017-12-04 17:26:29][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 80: Cannot assign requested address: bind
+  [INFO][main][2017-12-04 17:26:29][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:80}
+  [INFO][main][2017-12-04 17:26:41][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:26:42][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://192.168.2.236:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-04 17:26:42][org.eclipse.jetty.util.log.Log] - Logging initialized @1244ms
+  [INFO][main][2017-12-04 17:26:42][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:26:42][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [WARN][main][2017-12-04 17:26:42][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:80}: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[WARN][main][2017-12-04 17:26:42][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@1f760b47: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[ERROR][main][2017-12-04 17:26:42][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 80: Cannot assign requested address: bind
+  [INFO][main][2017-12-04 17:26:42][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:80}
+  [INFO][main][2017-12-04 17:27:17][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:27:18][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://192.168.2.236:9999/services/WSInterface?wsdl
+  [INFO][main][2017-12-04 17:27:18][org.eclipse.jetty.util.log.Log] - Logging initialized @1402ms
+  [INFO][main][2017-12-04 17:27:18][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:27:18][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [WARN][main][2017-12-04 17:27:18][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:9999}: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[WARN][main][2017-12-04 17:27:18][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@1f760b47: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[ERROR][main][2017-12-04 17:27:18][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 9,999: Cannot assign requested address: bind
+  [INFO][main][2017-12-04 17:27:18][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:9999}
+  [INFO][main][2017-12-04 17:27:38][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:27:38][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://192.168.2.236:9888/services/WSInterface?wsdl
+  [INFO][main][2017-12-04 17:27:38][org.eclipse.jetty.util.log.Log] - Logging initialized @1231ms
+  [INFO][main][2017-12-04 17:27:38][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:27:38][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [WARN][main][2017-12-04 17:27:38][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:9888}: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[WARN][main][2017-12-04 17:27:38][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@1f760b47: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[ERROR][main][2017-12-04 17:27:38][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 9,888: Cannot assign requested address: bind
+  [INFO][main][2017-12-04 17:27:38][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:9888}
+  [INFO][main][2017-12-04 17:28:20][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:28:21][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://192.168.2.236:456/services/WSInterface?wsdl
+  [INFO][main][2017-12-04 17:28:21][org.eclipse.jetty.util.log.Log] - Logging initialized @1249ms
+  [INFO][main][2017-12-04 17:28:21][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:28:21][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [WARN][main][2017-12-04 17:28:21][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:456}: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[WARN][main][2017-12-04 17:28:21][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@1f760b47: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[ERROR][main][2017-12-04 17:28:21][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 456: Cannot assign requested address: bind
+  [INFO][main][2017-12-04 17:28:21][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:456}
+  [INFO][main][2017-12-04 17:29:24][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:29:24][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://192.168.2.236:7889/services/WSInterface?wsdl
+  [INFO][main][2017-12-04 17:29:25][org.eclipse.jetty.util.log.Log] - Logging initialized @1418ms
+  [INFO][main][2017-12-04 17:29:25][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:29:25][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [WARN][main][2017-12-04 17:29:25][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:7889}: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[WARN][main][2017-12-04 17:29:25][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@1f760b47: java.net.BindException: Cannot assign requested address: bind
+  java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:27)
+[ERROR][main][2017-12-04 17:29:25][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 7,889: Cannot assign requested address: bind
+  [INFO][main][2017-12-04 17:29:25][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@7283d3eb{HTTP/1.1}{192.168.2.236:7889}
+  [INFO][main][2017-12-04 17:33:06][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:33:06][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:7889/services/WSInterface?wsdl
+  [INFO][main][2017-12-04 17:33:06][org.eclipse.jetty.util.log.Log] - Logging initialized @1390ms
+  [INFO][main][2017-12-04 17:33:06][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:33:06][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-04 17:33:06][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:7889}
+  [INFO][main][2017-12-04 17:33:06][org.eclipse.jetty.server.Server] - Started @1532ms
+  [INFO][main][2017-12-04 17:33:06][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-04 17:33:37][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:33:38][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:7889/services/WSInterface?wsdl
+  [INFO][main][2017-12-04 17:33:38][org.eclipse.jetty.util.log.Log] - Logging initialized @1720ms
+  [INFO][main][2017-12-04 17:33:38][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:33:38][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-04 17:33:38][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:7889}
+  [INFO][main][2017-12-04 17:33:38][org.eclipse.jetty.server.Server] - Started @1877ms
+  [INFO][main][2017-12-04 17:33:38][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-04 17:33:49][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-04 17:33:50][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-04 17:33:50][org.eclipse.jetty.util.log.Log] - Logging initialized @1210ms
+  [INFO][main][2017-12-04 17:33:50][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-04 17:33:50][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-04 17:33:50][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-04 17:33:50][org.eclipse.jetty.server.Server] - Started @1392ms
+  [INFO][main][2017-12-04 17:33:50][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-04 17:35:00][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [ERROR][main][2017-12-04 17:35:01][com.commen.utils.CxfInvokeUtil] - cxf 调用webservice 执行错误：
+  org.apache.cxf.common.i18n.UncheckedException: No operation was found with the name {http://test.webservice.CXF.com/}HelloWord.
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:289)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:283)
+	at com.commen.utils.CxfInvokeUtil.invoke(CxfInvokeUtil.java:40)
+	at com.CXF.webservice.test.TestClient.main(TestClient.java:24)
+[INFO][main][2017-12-04 17:35:20][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-05 08:51:57][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 08:51:59][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 08:51:59][org.eclipse.jetty.util.log.Log] - Logging initialized @4376ms
+  [INFO][main][2017-12-05 08:51:59][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 08:51:59][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 08:51:59][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 08:51:59][org.eclipse.jetty.server.Server] - Started @4580ms
+  [INFO][main][2017-12-05 08:51:59][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-05 08:52:09][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-05 08:53:08][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-05 08:54:38][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-05 08:56:30][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-05 08:58:19][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-05 08:58:37][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-05 09:20:41][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 09:20:42][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 09:20:42][org.eclipse.jetty.util.log.Log] - Logging initialized @1344ms
+  [INFO][main][2017-12-05 09:20:42][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 09:20:42][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 09:20:42][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 09:20:42][org.eclipse.jetty.server.Server] - Started @1488ms
+  [INFO][main][2017-12-05 09:20:42][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-05 09:20:50][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [ERROR][main][2017-12-05 09:20:51][com.CXF.service.impl.MutualCheckRuleServerImpl] - 获取申请单信息错误
+  [INFO][main][2017-12-05 09:21:45][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [ERROR][main][2017-12-05 09:21:45][com.CXF.service.impl.MutualCheckRuleServerImpl] - 获取申请单信息错误
+  [INFO][main][2017-12-05 09:22:28][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 09:22:28][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 09:22:29][org.eclipse.jetty.util.log.Log] - Logging initialized @1252ms
+  [INFO][main][2017-12-05 09:22:29][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 09:22:29][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 09:22:29][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 09:22:29][org.eclipse.jetty.server.Server] - Started @1411ms
+  [INFO][main][2017-12-05 09:22:29][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-05 09:22:34][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [ERROR][main][2017-12-05 09:22:35][com.CXF.service.impl.MutualCheckRuleServerImpl] - 获取申请单信息错误
+  [INFO][main][2017-12-05 09:24:20][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-05 13:32:13][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 13:32:14][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 13:32:14][org.eclipse.jetty.util.log.Log] - Logging initialized @1409ms
+  [INFO][main][2017-12-05 13:32:14][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 13:32:14][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 13:32:14][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 13:32:14][org.eclipse.jetty.server.Server] - Started @1672ms
+  [INFO][main][2017-12-05 13:32:14][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-05 13:39:08][org.apache.cxf.common.jaxb.JAXBUtils] - Created classes: com.cxf.webservice.test.CallInterface, com.cxf.webservice.test.CallInterfaceResponse, com.cxf.webservice.test.ObjectFactory
+  [INFO][main][2017-12-05 13:47:34][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 13:47:35][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 13:47:35][org.eclipse.jetty.util.log.Log] - Logging initialized @1193ms
+  [INFO][main][2017-12-05 13:47:35][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 13:47:35][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 13:47:35][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 13:47:35][org.eclipse.jetty.server.Server] - Started @1410ms
+  [INFO][main][2017-12-05 13:47:35][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-05 14:18:44][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 14:18:45][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 14:18:45][org.eclipse.jetty.util.log.Log] - Logging initialized @2233ms
+  [INFO][main][2017-12-05 14:18:45][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 14:18:45][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 14:18:45][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 14:18:45][org.eclipse.jetty.server.Server] - Started @2451ms
+  [INFO][main][2017-12-05 14:18:45][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-05 18:20:18][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 18:20:20][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 18:20:20][org.eclipse.jetty.util.log.Log] - Logging initialized @2648ms
+  [INFO][main][2017-12-05 18:20:20][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 18:20:20][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 18:20:20][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 18:20:20][org.eclipse.jetty.server.Server] - Started @2865ms
+  [INFO][main][2017-12-05 18:20:20][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-05 18:23:54][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 18:23:55][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 18:23:55][org.eclipse.jetty.util.log.Log] - Logging initialized @1277ms
+  [INFO][main][2017-12-05 18:23:55][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 18:23:55][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [WARN][main][2017-12-05 18:23:55][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@7283d3eb{HTTP/1.1}{127.0.0.1:80}: java.net.BindException: Address already in use: bind
+  java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:19)
+[WARN][main][2017-12-05 18:23:55][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@1f760b47: java.net.BindException: Address already in use: bind
+  java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:19)
+[ERROR][main][2017-12-05 18:23:55][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 80: Address already in use: bind
+  [INFO][main][2017-12-05 18:23:55][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@7283d3eb{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 18:24:09][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 18:24:10][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 18:24:10][org.eclipse.jetty.util.log.Log] - Logging initialized @1351ms
+  [INFO][main][2017-12-05 18:24:10][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 18:24:10][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 18:24:10][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 18:24:10][org.eclipse.jetty.server.Server] - Started @1516ms
+  [INFO][main][2017-12-05 18:24:10][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-05 18:36:38][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 18:36:39][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 18:36:39][org.eclipse.jetty.util.log.Log] - Logging initialized @1320ms
+  [INFO][main][2017-12-05 18:36:39][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 18:36:39][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [WARN][main][2017-12-05 18:36:39][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED ServerConnector@7283d3eb{HTTP/1.1}{127.0.0.1:80}: java.net.BindException: Address already in use: bind
+  java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:19)
+[WARN][main][2017-12-05 18:36:39][org.eclipse.jetty.util.component.AbstractLifeCycle] - FAILED org.eclipse.jetty.server.Server@1f760b47: java.net.BindException: Address already in use: bind
+  java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine.addServant(JettyHTTPServerEngine.java:470)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.activate(JettyHTTPDestination.java:175)
+	at org.apache.cxf.transport.AbstractObservable.setMessageObserver(AbstractObservable.java:53)
+	at org.apache.cxf.binding.AbstractBindingFactory.addListener(AbstractBindingFactory.java:95)
+	at org.apache.cxf.binding.soap.SoapBindingFactory.addListener(SoapBindingFactory.java:896)
+	at org.apache.cxf.endpoint.ServerImpl.start(ServerImpl.java:123)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:366)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.spi.ProviderImpl.createAndPublishEndpoint(ProviderImpl.java:136)
+	at javax.xml.ws.Endpoint.publish(Endpoint.java:240)
+	at com.CXF.webservice.test.TestServers.main(TestServers.java:19)
+[ERROR][main][2017-12-05 18:36:39][org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine] - Could not start Jetty server on port 80: Address already in use: bind
+  [INFO][main][2017-12-05 18:36:39][org.eclipse.jetty.server.AbstractConnector] - Stopped ServerConnector@7283d3eb{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 18:39:56][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 18:39:57][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 18:39:57][org.eclipse.jetty.util.log.Log] - Logging initialized @1177ms
+  [INFO][main][2017-12-05 18:39:57][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 18:39:57][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 18:39:57][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 18:39:57][org.eclipse.jetty.server.Server] - Started @1370ms
+  [INFO][main][2017-12-05 18:39:57][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-05 18:50:43][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-05 18:50:44][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://127.0.0.1:80/services/WSInterface?wsdl
+  [INFO][main][2017-12-05 18:50:44][org.eclipse.jetty.util.log.Log] - Logging initialized @1390ms
+  [INFO][main][2017-12-05 18:50:44][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-05 18:50:44][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-05 18:50:44][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{127.0.0.1:80}
+  [INFO][main][2017-12-05 18:50:44][org.eclipse.jetty.server.Server] - Started @1570ms
+  [INFO][main][2017-12-05 18:50:44][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/services,null,AVAILABLE}
+  [INFO][main][2017-12-06 16:03:48][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-06 16:03:49][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://localhost:7002/card/services/HelloWorld?wsdl
+  [INFO][main][2017-12-06 16:03:49][org.eclipse.jetty.util.log.Log] - Logging initialized @2374ms
+  [INFO][main][2017-12-06 16:03:49][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-06 16:03:49][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-06 16:03:54][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{localhost:7002}
+  [INFO][main][2017-12-06 16:03:54][org.eclipse.jetty.server.Server] - Started @7130ms
+  [INFO][main][2017-12-06 16:03:54][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/card/services,null,AVAILABLE}
+  [INFO][main][2017-12-06 16:24:36][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-06 16:24:37][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://localhost:7002/card/services/HelloWorld?wsdl
+  [INFO][main][2017-12-06 16:24:37][org.eclipse.jetty.util.log.Log] - Logging initialized @1969ms
+  [INFO][main][2017-12-06 16:24:37][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-06 16:24:37][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-06 16:24:38][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{localhost:7002}
+  [INFO][main][2017-12-06 16:24:38][org.eclipse.jetty.server.Server] - Started @2939ms
+  [INFO][main][2017-12-06 16:24:38][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/card/services,null,AVAILABLE}
+  [INFO][main][2017-12-07 14:04:15][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-07 14:04:15][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://localhost:7002/card/services/HelloWorld?wsdl
+  [INFO][main][2017-12-07 14:04:15][org.eclipse.jetty.util.log.Log] - Logging initialized @2565ms
+  [INFO][main][2017-12-07 14:04:16][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-07 14:04:16][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-07 14:04:20][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{localhost:7002}
+  [INFO][main][2017-12-07 14:04:20][org.eclipse.jetty.server.Server] - Started @7517ms
+  [INFO][main][2017-12-07 14:04:21][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/card/services,null,AVAILABLE}
+  [INFO][main][2017-12-11 13:01:54][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-11 13:01:56][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://localhost:7002/card/services/HelloWorld?wsdl
+  [INFO][main][2017-12-11 13:01:56][org.eclipse.jetty.util.log.Log] - Logging initialized @2626ms
+  [INFO][main][2017-12-11 13:01:56][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-11 13:01:56][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@6c7a164b
+  [INFO][main][2017-12-11 13:01:56][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@4dd6fd0a{HTTP/1.1}{localhost:7002}
+  [INFO][main][2017-12-11 13:01:56][org.eclipse.jetty.server.Server] - Started @3004ms
+  [INFO][main][2017-12-11 13:01:56][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@59e2d8e3{/card/services,null,AVAILABLE}
+  [INFO][main][2017-12-11 14:19:00][org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] - Creating Service {http://test.webservice.CXF.com/}TestServersService from class com.CXF.webservice.test.TestServers
+  [INFO][main][2017-12-11 14:19:00][org.apache.cxf.endpoint.ServerImpl] - Setting the server's publish address to be http://localhost:7002/card/services/HelloWorld?wsdl
+  [INFO][main][2017-12-11 14:19:00][org.eclipse.jetty.util.log.Log] - Logging initialized @1424ms
+  [INFO][main][2017-12-11 14:19:00][org.eclipse.jetty.server.Server] - jetty-9.2.15.v20160210
+  [WARN][main][2017-12-11 14:19:00][org.eclipse.jetty.server.handler.AbstractHandler] - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@57fd1ce0
+  [INFO][main][2017-12-11 14:19:00][org.eclipse.jetty.server.AbstractConnector] - Started ServerConnector@72bc71dd{HTTP/1.1}{localhost:7002}
+  [INFO][main][2017-12-11 14:19:00][org.eclipse.jetty.server.Server] - Started @1483ms
+  [INFO][main][2017-12-11 14:19:00][org.eclipse.jetty.server.handler.ContextHandler] - Started o.e.j.s.h.ContextHandler@70a1ce20{/card/services,null,AVAILABLE}
+  [INFO][main][2018-01-25 13:35:00][test.com.CXF.controller.TestControllerTest] - fEqNCco3Yq9h5ZUglD3CZJT4lBs=
+  [INFO][main][2018-01-25 13:47:32][test.com.CXF.controller.TestControllerTest] - fEqNCco3Yq9h5ZUglD3CZJT4lBs=
+  [INFO][main][2018-01-25 14:08:26][test.com.CXF.controller.TestControllerTest] - fEqNCco3Yq9h5ZUglD3CZJT4lBs=
+  [WARN][main][2018-05-17 14:12:35][org.dcm4cheri.data.DatasetImpl] - Ignore illegal attribute (0002,0012) Implementation Class UID,UI,*1,#22,[1.2.826.0.1.3680043.2]
+  [WARN][main][2018-05-17 14:12:35][org.dcm4cheri.data.DatasetImpl] - Ignore illegal attribute (0002,0013) Implementation Version Name,SH,*1,#12,[SKPACS_V8.0 ]
+  

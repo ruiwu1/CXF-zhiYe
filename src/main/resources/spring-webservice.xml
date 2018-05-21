@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-jaxws.xml"/>
+    <!-- 配置说明 每个cxf webservice 成对配置 -->
+    <!--<bean id="id值" class="webservice 接口实现类"/>-->
+    <!--<jaxws:endpoint id="对外开放的Id值" implementor="#bean的Id值,带前面的#,"-->
+                    <!--address="/对外开放的url路径，带前面的/"/>-->
+
+    <!--<bean id="test" class="com.fxtech.admin.service.webservice.server.test.impl.testServiceImpl"></bean>-->
+    <!--<jaxws:endpoint id="testService" implementor="#test"-->
+    <!--address="/test"/>-->
+
+    <!--<bean id="hello" class="com.fxtech.admin.service.webservice.server.test.impl.HelloWorldServiceImpl"/>-->
+    <!--<jaxws:endpoint id="helloWorld" implementor="#hello" address="/helloWorld"></jaxws:endpoint>-->
+
+
+    <!--获取员工用户信息接口-->
+    <bean id="PortalServiceImpl" class="com.CXF.webservice.impl.UserForStaffImpl"/>
+    <jaxws:endpoint id="PortalService" implementor="#PortalServiceImpl" address="/WSInterface"></jaxws:endpoint>
+
+    <bean id="MutualCheckRuleImpl" class="com.CXF.webservice.impl.MutualCheckRuleuleImpl"/>
+    <jaxws:endpoint id="MutualCheckRule" implementor="#MutualCheckRuleImpl" address="/WSInterface1"></jaxws:endpoint>
+
+</beans>

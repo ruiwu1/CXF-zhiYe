@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.CXF.mapper.TestPostgresqlMapper">
+
+
+
+    <select id="selectCountTest" resultType="java.lang.String">
+        select login_id from common_user
+    </select>
+
+    <update id="updatePassWd" parameterType="com.CXF.model.postgreUser">
+        UPDATE common_user SET user_password=#{passWD} WHERE login_id = #{loginID}
+    </update>
+
+</mapper>
